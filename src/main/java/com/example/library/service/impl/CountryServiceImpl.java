@@ -6,6 +6,7 @@ import com.example.library.service.CountryService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CountryServiceImpl implements CountryService {
@@ -25,6 +26,11 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public List<Country> listAll() {
         return countryRepository.findAll();
+    }
+
+    @Override
+    public Optional<Country> findById(Long id) {
+        return countryRepository.findById(id);
     }
 
     @Override
